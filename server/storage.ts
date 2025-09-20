@@ -1,4 +1,11 @@
-import { type User, type InsertUser } from "@shared/schema";
+import { 
+  type User, 
+  type InsertUser, 
+  type ContactSubmission, 
+  type InsertContactSubmission,
+  type JobApplication,
+  type InsertJobApplication 
+} from "@shared/schema";
 import { randomUUID } from "crypto";
 
 // modify the interface with any CRUD methods
@@ -8,13 +15,21 @@ export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  createJobApplication(application: InsertJobApplication): Promise<JobApplication>;
+  getContactSubmissions(): Promise<ContactSubmission[]>;
+  getJobApplications(): Promise<JobApplication[]>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
+  private contactSubmissions: Map<string, ContactSubmission>;
+  private jobApplications: Map<string, JobApplication>;
 
   constructor() {
     this.users = new Map();
+    this.contactSubmissions = new Map();
+    this.jobApplications = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -32,6 +47,36 @@ export class MemStorage implements IStorage {
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
+  }
+
+  async createContactSubmission(insertSubmission: InsertContactSubmission): Promise<ContactSubmission> {
+    const id = randomUUID();
+    const submission: ContactSubmission = { 
+      ...insertSubmission, 
+      id, 
+      submittedAt: new Date() 
+    };
+    this.contactSubmissions.set(id, submission);
+    return submission;
+  }
+
+  async createJobApplication(insertApplication: InsertJobApplication): Promise<JobApplication> {
+    const id = randomUUID();
+    const application: JobApplication = { 
+      ...insertApplication, 
+      id, 
+      submittedAt: new Date() 
+    };
+    this.jobApplications.set(id, application);
+    return application;
+  }
+
+  async getContactSubmissions(): Promise<ContactSubmission[]> {
+    return Array.from(this.contactSubmissions.values());
+  }
+
+  async getJobApplications(): Promise<JobApplication[]> {
+    return Array.from(this.jobApplications.values());
   }
 }
 
