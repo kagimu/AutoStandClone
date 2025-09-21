@@ -38,11 +38,7 @@ export default function Contact() {
   });
 
   const submitContactMutation = useMutation({
-    mutationFn: (data: ContactFormData) => apiRequest("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    }),
+    mutationFn: (data: ContactFormData) => apiRequest("POST", "/api/contact", data),
     onSuccess: () => {
       setIsSubmitted(true);
       form.reset();
@@ -73,7 +69,8 @@ export default function Contact() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to revolutionize your industrial automation? Let's discuss how our team can help transform your operations.
+             Partner with us to transform your IT from a necessity to a competitive advantage.
+             Secure. Scalable. Always one step ahead.
             </p>
           </div>
 
@@ -171,7 +168,7 @@ export default function Contact() {
                             <FormLabel>Message *</FormLabel>
                             <FormControl>
                               <Textarea 
-                                placeholder="Tell us about your industrial automation needs..."
+                                placeholder="Tell us about your needs..."
                                 className="min-h-[120px]"
                                 {...field} 
                                 data-testid="textarea-message"
@@ -213,8 +210,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Email</h4>
-                      <p className="text-muted-foreground">contact@autstand.com</p>
-                      <p className="text-muted-foreground">careers@autstand.com</p>
+                      <p className="text-muted-foreground">adobeitech12@gmail.com</p>
+                      <p className="text-muted-foreground">We reply within 24 hours</p>
                     </div>
                   </div>
 
@@ -224,7 +221,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+2567599272512</p>
                       <p className="text-muted-foreground">Mon-Fri 9:00 AM - 6:00 PM EST</p>
                     </div>
                   </div>
@@ -236,9 +233,9 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold">Office</h4>
                       <p className="text-muted-foreground">
-                        123 Innovation Drive<br />
-                        Industrial Tech Park<br />
-                        San Francisco, CA 94105
+                        Plot 2400,<br />
+                        Kamuli-Kilule Road,<br />
+                        Kampala, Uganda
                       </p>
                     </div>
                   </div>
@@ -249,20 +246,14 @@ export default function Contact() {
                 <CardHeader>
                   <CardTitle className="text-2xl">Ready to Start?</CardTitle>
                   <CardDescription>
-                    Join our team of industrial automation experts.
+                    Work with our team of experts
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-6">
-                    We're always looking for talented engineers who want to build the future of industrial automation.
+                   we understand that technology is the backbone of modern businesses. That’s why we offer a full spectrum of IT services to meet your specific needs.
                   </p>
-                  <Button
-                    size="lg"
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                    data-testid="button-view-careers"
-                  >
-                    View Career Opportunities
-                  </Button>
+                
                 </CardContent>
               </Card>
             </div>

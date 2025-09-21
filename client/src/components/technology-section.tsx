@@ -4,35 +4,57 @@ export default function TechnologySection() {
   const technologies = [
     {
       icon: Settings,
-      title: "PLC Programming meets Modern Software Engineering",
-      image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      title: "IT Managed Service",
+      image: "IT-SERVICE.jpg",
       alt: "Industrial automation factory floor",
       color: "text-primary",
-      borderColor: "hover:border-primary/50"
+      borderColor: "hover:border-red-500/50",
+      description: "Provide round-the-clock monitoring, management, and support for your entire IT infrastructure."
     },
     {
       icon: Monitor,
-      title: "SCADA Systems using Web Technologies",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      title: "Software Development",
+      image: "software.jpg",
       alt: "Industrial control room with monitoring systems",
       color: "text-accent",
-      borderColor: "hover:border-accent/50"
+      borderColor: "hover:border-blue-500/50",
+        description: "Build software solutions specifically designed to address the unique challenges and goals of your business."
     },
     {
       icon: Wifi,
-      title: "Industrial IoT using modern libraries and Real-time Data",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      title: "IT Consultancy",
+      image: "consultancy.jpg",
       alt: "IoT sensors and connected industrial devices",
       color: "text-green-500",
-      borderColor: "hover:border-green-500/50"
+      borderColor: "hover:border-green-500/50",
+        description: "provide expert advice and strategic planning to align your technology investments with your business goals.."
     },
     {
       icon: Box,
-      title: "Digital Twins using 3D Graphics and Open Source Technologies",
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      title: "CyberSecurity",
+      image: "cybersecurity.jpg",
       alt: "3D digital twin modeling and visualization",
       color: "text-purple-500",
-      borderColor: "hover:border-purple-500/50"
+      borderColor: "hover:border-purple-500/50",
+        description: "Protect your business with threat detection, incident response, and compliance management."
+    },
+     {
+      icon: Box,
+      title: "Cloud Solutions",
+      image: "CLOUD-COMPUTING.jpg",
+      alt: "3D digital twin modeling and visualization",
+      color: "text-purple-500",
+      borderColor: "hover:border-gray-500/50",
+        description: "We help you migrate to the cloud, manage your cloud infrastructure, and deploy cloud-native applications."
+    },
+     {
+      icon: Box,
+      title: "IT Infrastructure",
+      image: "INFRASTRUCTURE.jpg",
+      alt: "3D digital twin modeling and visualization",
+      color: "text-purple-500",
+      borderColor: "hover:bordeR-green-500/50",
+        description: "Our IT Infrastructure Solutions ensure a robust, scalable design for your business growth and long-term reliability.."
     }
   ];
 
@@ -40,9 +62,9 @@ export default function TechnologySection() {
     <section id="technology" className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">From Abstract to Physical</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Expertise</h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Stop building another CRUD app. Start building systems where your algorithms control robotic arms, your data structures optimize supply chains, and your code directly impacts the physical world.
+            We provide a comprehensive range of IT services that ensure your business operates smoothly and securely.
           </p>
         </div>
 
@@ -57,18 +79,22 @@ export default function TechnologySection() {
                 <tech.icon className={`${tech.color} h-6 w-6 mr-3`} />
                 <h3 className="text-xl font-semibold">{tech.title}</h3>
               </div>
+              <div className="flex justify-between p-2 items-center">
               <img
                 src={tech.image}
                 alt={tech.alt}
-                className="w-full h-48 object-cover rounded-lg"
-                loading="lazy"
+                className="w-72 h-48 object-cover rounded-lg"
+                  onLoad={(e) => e.currentTarget.classList.add("opacity-100")}
               />
+              <h1 className="text-lg ml-10">{tech.description}</h1>
+              </div>
+             
             </div>
           ))}
         </div>
 
         {/* Video Section */}
-        <div className="text-center">
+     {}   {/*<div className="text-center">
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-card rounded-xl p-8 border border-border">
               <h3 className="text-2xl font-bold mb-6">Real Industrial Automation</h3>
@@ -82,7 +108,7 @@ export default function TechnologySection() {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

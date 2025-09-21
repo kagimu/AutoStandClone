@@ -6,21 +6,19 @@ import { CheckCircle } from "lucide-react";
 export default function CodeExamplesSection() {
   const [mqttStep, setMqttStep] = useState(0);
 
-  const plcCode = `PROGRAM ConveyorMerge
+  const plcCode = `COMPANY RetailHub
 
 VAR
-    ConveyorA_Speed : REAL := 1.5; (* m/s *)
-    ConveyorB_Speed : REAL := 1.2; (* m/s *)
-    PartDetectorA : BOOL;
-    PartDetectorB : BOOL;
-    AllowMerge : BOOL := FALSE;
+    “I can’t thank Adobe enough for their
+     outstanding support. Whenever we face
+     technical issues, their team is just
+     a call away and resolves problems quickly;
 END_VAR
 
-IF PartDetectorA AND NOT PartDetectorB THEN
-    AllowMerge := TRUE;
-    ConveyorA_Speed := 2.0; (* Accelerate *)
-ELSIF PartDetectorB THEN
-    ConveyorA_Speed := 0.8; (* Wait for merge *)
+IF they never did the fixing they did THEN
+    we wouldnt have made profits that year
+ELSIF we are grateful
+   for their skill.
 END_IF;`;
 
   const mqttExamples = [
@@ -30,43 +28,15 @@ END_IF;`;
       textColor: "text-blue-400",
       topic: "factory/line1/sensor/temperature",
       payload: {
-        deviceId: "TMP-001",
-        timestamp: 1704712800000,
-        temperature: 78.5,
-        unit: "celsius",
-        status: "normal"
+        company: "GreenTech Solutions",
+        location: "Tirupati Mall, Kabalagala",
+        faults: 0,
+        condition: "happy",
+        status: "sorted"
       },
-      description: "Temperature sensor publishing real-time data via MQTT"
+      description: "System built for them"
     },
-    {
-      label: "processing",
-      color: "bg-yellow-400",
-      textColor: "text-yellow-400",
-      topic: "factory/plc/station1/status",
-      payload: {
-        plcId: "PLC-SIEMENS-01",
-        cycleTime: 45,
-        ioStatus: "healthy",
-        activeProgram: "MAIN_CYCLE",
-        errorCode: null
-      },
-      description: "PLC publishing operational status and cycle information"
-    },
-    {
-      label: "decision",
-      color: "bg-red-400",
-      textColor: "text-red-400",
-      topic: "factory/alarms/critical",
-      payload: {
-        alarmId: "ALM-TEMP-001",
-        severity: "HIGH",
-        message: "Temperature threshold exceeded",
-        source: "TMP-001",
-        value: 85.2,
-        threshold: 80.0
-      },
-      description: "Critical alarm data sent when temperature exceeds safety limits"
-    }
+  
   ];
 
   const runMqttCode = () => {
@@ -86,8 +56,8 @@ END_IF;`;
     <section id="examples" className="py-24 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Real Industrial Automation</h2>
-          <p className="text-xl text-muted-foreground">Where your code controls reality</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Testimonials</h2>
+          <p className="text-xl text-muted-foreground">What some of our business partners say about us</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -95,9 +65,9 @@ END_IF;`;
           <div className="space-y-8">
             <div className="code-block rounded-xl p-6" data-testid="code-block-plc">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold">PLC Programming</h3>
+                <h3 className="text-lg font-semibold">Tom H., Operations Director</h3>
                 <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
-                  IEC 61131-3 Structured Text
+                  Retail Hub
                 </span>
               </div>
               
@@ -106,10 +76,10 @@ END_IF;`;
               <div className="mt-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
                 <div className="flex items-center text-green-400">
                   <CheckCircle className="mr-2 h-4 w-4" />
-                  <span className="font-semibold">PLC Program Executed</span>
+                  <span className="font-semibold">RetailHub Program Executed</span>
                 </div>
                 <p className="text-sm text-green-300 mt-1">
-                  Conveyor A: 2.0 m/s, AllowMerge: TRUE, Parts flowing smoothly
+                 IT Management and system repair: TRUE, Parts flowing smoothly
                 </p>
               </div>
             </div>
@@ -119,7 +89,7 @@ END_IF;`;
           <div className="space-y-8">
             <div className="code-block rounded-xl p-6" data-testid="code-block-mqtt">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold">MQTT Industrial Messaging</h3>
+                <h3 className="text-lg font-semibold">Sarah M., Project Manager</h3>
                 <Button
                   size="sm"
                   variant="secondary"
@@ -153,9 +123,9 @@ END_IF;`;
               </div>
 
               <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                <h4 className="font-semibold text-blue-400 mb-2">MQTT Industrial Communication</h4>
+                <h4 className="font-semibold text-blue-400 mb-2">What GreenTech Says</h4>
                 <p className="text-xs text-blue-300">
-                  These examples show real MQTT payload data from industrial systems, featuring hierarchical topic structures, standardized JSON formats, and telemetry data for sensors, PLCs, and alarms in manufacturing environments.
+                 The team at Adobe exceeded our expectations! They took the time to understand our needs and delivered a software solution that has streamlined our entire workflow. Our employees love the new system!
                 </p>
               </div>
             </div>

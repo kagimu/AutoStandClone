@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
-import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 
 const viteLogger = createLogger();
@@ -26,19 +25,28 @@ export async function setupVite(app: Express, server: Server) {
     allowedHosts: true as const,
   };
 
-  const vite = await createViteServer({
-    ...viteConfig,
-    configFile: false,
-    customLogger: {
-      ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
-        process.exit(1);
-      },
+  // ✅ Dynamically import and execute the config function
+const configFn = (await import("../vite.config")).default;
+const viteConfig = await configFn();
+
+const vite = await createViteServer({
+  ...viteConfig,
+  configFile: false,
+  customLogger: {
+    ...viteLogger,
+    error: (msg, options) => {
+      viteLogger.error(msg, options);
+      process.exit(1);
     },
-    server: serverOptions,
-    appType: "custom",
-  });
+  },
+  server: {
+    ...viteConfig.server,
+    middlewareMode: true,
+    hmr: { server },
+    allowedHosts: true as const,
+  },
+  appType: "custom",
+});
 
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {

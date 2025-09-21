@@ -14,7 +14,7 @@ export default function WhyIndustrialSection() {
     {
       icon: Cpu,
       title: "Cutting-Edge Tech",
-      description: "Work with IoT, edge computing, real-time systems, and digital twins—the most advanced technologies in industry.",
+      description: "Work with PWA, Latest mobile designs, secure anti-cyber crime systems, quality tech equipment delivered and cloud solutions.",
       color: "text-accent",
       bgColor: "bg-accent/10",
       hoverBg: "group-hover:bg-accent/20",
@@ -35,9 +35,9 @@ export default function WhyIndustrialSection() {
     <section id="why-industrial" className="py-24 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Industrial Tech?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Choose Adobe?</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transform from building apps to building the future. Your code doesn't just run in browsers—it controls robots, optimizes factories, and shapes the physical world.
+            Transform from building apps, systems to building the future. Your code and equipment doesn't just run in browsers—it controls companies, optimizes factories, and shapes the physical world.
           </p>
         </div>
         
