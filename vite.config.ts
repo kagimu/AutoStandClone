@@ -20,14 +20,14 @@ export default async () => {
     plugins,
     resolve: {
       alias: {
-        "@": path.resolve(import.meta.dirname, "client", "src"),
-        "@shared": path.resolve(import.meta.dirname, "shared"),
-        "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+        "@": path.resolve(__dirname, "client", "src"),       // ✅ fixed alias
+        "@shared": path.resolve(__dirname, "shared"),
+        "@assets": path.resolve(__dirname, "attached_assets"),
       },
     },
-    root: path.resolve(import.meta.dirname, "client"),
+    root: path.resolve(__dirname, "client"),                  // ✅ client folder as root
     build: {
-      outDir: path.resolve(import.meta.dirname, "dist/public"),
+      outDir: "dist",                                         // ✅ relative to client folder
       emptyOutDir: true,
     },
     server: {
