@@ -73,24 +73,22 @@ export default function HeroSection() {
           </motion.p>
 
           {/* Button Section */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-start items-start"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4 } },
-            }}
-          >
-            <Link href="/contact">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-border text-foreground px-8 py-4 text-lg font-semibold hover:bg-secondary transition-all shadow-md hover:shadow-lg"
-                data-testid="button-simulation-software"
-              >
-                Book an appointment
-              </Button>
-            </Link>
-          </motion.div>
+
+          <div>
+            <Link href="/contact" className="mt-10 cursor-pointer">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      data-testid="button-contact"
+                      className="border-border text-foreground px-8 py-4 text-lg font-semibold hover:bg-secondary transition-all shadow-md hover:shadow-lg"
+                    >
+                      Book an appointment
+                    </Button>
+                  
+             </Link>
+          </div>
+           
+
         </motion.div>
       </div>
 
