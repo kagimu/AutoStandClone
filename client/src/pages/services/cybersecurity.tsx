@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Shield, Lock, Eye, AlertTriangle, CheckCircle, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Cybersecurity() {
+     useEffect(() => {
+      // Scroll to the top when this component mounts
+      window.scrollTo(0, 0);
+    }, []);
   const benefits = [
     {
       icon: Shield,
@@ -59,27 +64,30 @@ export default function Cybersecurity() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary">
       <Navigation />
 
-      <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary">
+       <section
+        className="relative pt-32 pb-16 md:h-[400px] bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
+        style={{
+          backgroundImage: "url('/cyber2.jpg')",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-left"
           >
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-red-500/10 rounded-2xl flex items-center justify-center">
-                <Shield className="w-10 h-10 text-red-500" />
-              </div>
+            <div className="flex justify-start mb-6">
+          
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Cybersecurity Services
+              Cybersecurity<br/> Services
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive security solutions to protect your business from evolving cyber threats.
+            <p className="text-xl max-w-3xl">
+              Comprehensive security solutions to protect<br/> your business from evolving cyber threats.
             </p>
           </motion.div>
         </div>
@@ -123,34 +131,46 @@ export default function Cybersecurity() {
         </div>
       </section>
 
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Security Benefits</h2>
-            <p className="text-lg text-muted-foreground">
-              Comprehensive protection for your digital assets
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
+    <section className="py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Security Benefits</h2>
+          <p className="text-lg text-muted-foreground">
+            Comprehensive protection for your digital assets
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {benefits.map((benefit, index) => {
+            // Define colors for each card
+            const colors = [
+              { bg: "bg-red-700", icon: "text-red-300" },
+              { bg: "bg-blue-700", icon: "text-blue-300" },
+              { bg: "bg-green-700", icon: "text-green-300" },
+              { bg: "bg-yellow-700", icon: "text-yellow-300" },
+            ];
+            const color = colors[index % colors.length];
+
+            return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-card border border-border hover:border-red-500/50 transition-all"
+                className={`p-6 rounded-xl ${color.bg} border border-border hover:scale-105 transition-all`}
               >
-                <div className="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-red-500" />
+                <div className={`w-12 h-12 ${color.bg} rounded-lg flex items-center justify-center mb-4`}>
+                  <benefit.icon className={`w-6 h-6 ${color.icon}`} />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
+    </section>
+
 
       <section className="py-16 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -61,7 +61,7 @@ export default function WhyIndustrialSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Why Choose Adobe?
+            Why <span className="text-[#4A90E2]">Choose</span> Adobe?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Transform from building apps, systems to building the future. Your

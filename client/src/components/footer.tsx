@@ -26,7 +26,7 @@ export default function Footer() {
 
           <div className="space-y-4 justify-center md:text-left">
             <div className="flex justify-center space-x-2 mt-10">
-               <img src="logo-home.png" alt="Logo" className="h-10 w-10" />
+               <img src="/Icon.png" alt="Logo" className="h-10 w-10" />
               <span className="text-lg font-bold mt-2">Adobe Technologies</span>
             </div>
            

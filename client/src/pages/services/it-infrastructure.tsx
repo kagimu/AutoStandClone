@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Server, Network, HardDrive, Wifi, CheckCircle, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function ITInfrastructure() {
+     useEffect(() => {
+      // Scroll to the top when this component mounts
+      window.scrollTo(0, 0);
+    }, []);
   const benefits = [
     {
       icon: Server,
@@ -68,10 +73,15 @@ export default function ITInfrastructure() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary">
       <Navigation />
 
-      <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary">
+       <section
+        className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
+        style={{
+          backgroundImage: "url('/networking11.jpg')",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -104,9 +114,9 @@ export default function ITInfrastructure() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/INFRASTRUCTURE.jpg"
+                src="/networking-page.jpg"
                 alt="IT Infrastructure"
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
             </motion.div>
             <motion.div
@@ -162,40 +172,52 @@ export default function ITInfrastructure() {
         </div>
       </section>
 
-      <section className="py-16 bg-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Infrastructure Components</h2>
-            <p className="text-lg text-muted-foreground">
-              Comprehensive solutions for every layer of your infrastructure
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {components.map((component, index) => (
+    <section className="py-16 bg-secondary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Infrastructure Components</h2>
+          <p className="text-lg text-muted-foreground">
+            Comprehensive solutions for every layer of your infrastructure
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {components.map((component, index) => {
+            // Define vibrant background colors
+            const bgColors = [
+              "bg-gradient-to-r from-red-900 to-pink-900",
+              "bg-gradient-to-r from-blue-900 to-indigo-900",
+              "bg-gradient-to-r from-green-900 to-teal-900",
+              "bg-gradient-to-r from-yellow-900 to-orange-900",
+            ];
+            const bgColor = bgColors[index % bgColors.length];
+
+            return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 rounded-xl bg-card border border-border"
+                className={`p-8 rounded-xl text-white shadow-lg ${bgColor} hover:scale-105 transition-transform`}
               >
-                <component.icon className="w-12 h-12 text-slate-500 mb-4" />
+                <component.icon className="w-12 h-12 mb-4 text-white" />
                 <h3 className="text-2xl font-bold mb-3">{component.title}</h3>
-                <p className="text-muted-foreground mb-6">{component.description}</p>
+                <p className="mb-6">{component.description}</p>
                 <div className="space-y-2">
                   {component.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
+    </section>
+
 
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

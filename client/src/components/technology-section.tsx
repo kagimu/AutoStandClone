@@ -6,35 +6,54 @@ export default function TechnologySection() {
   const technologies = [
     {
       icon: Settings,
-      title: "IT Managed Service",
-      image: "IT-SERVICE.jpg",
+      title: "Digital Marketing Service",
+      image: "DIGITAL MARKETING.jpeg",
       alt: "Industrial automation factory floor",
       color: "text-primary",
       borderColor: "hover:border-red-500/50",
-      description:
-        "Provide round-the-clock monitoring, management, and support for your entire IT infrastructure.",
-      link: "/services/it-managed-service"
+      subServices: [
+       "Search Engine Optimization (SEO)",
+       " Social Media Marketing (SMM), Display Advertising",
+        "Pay-Per-Click Advertising (PPC)",
+        "Conversion Rate Optimization (CRO)",
+        "Local SEO and Marketing",
+        "Analytics and Reporting"
+      ],
+      link: "/services/digital-marketing-service"
     },
     {
       icon: Monitor,
-      title: "Software Development",
+      title: "Web Development",
       image: "software.jpg",
       alt: "Industrial control room with monitoring systems",
       color: "text-accent",
       borderColor: "hover:border-blue-500/50",
-      description:
-        "Build software solutions specifically designed to address the unique challenges and goals of your business.",
+      subServices: [
+       " Custom Website Design and Development",
+       " E-Commerce Development",
+       " Content Management Systems (CMS)",
+       " Web Application Development",
+       " Website Redesign",
+       " Maintenance and Support"
+      ],
       link: "/services/software-development"
     },
     {
       icon: Wifi,
-      title: "IT Consultancy",
-      image: "consultancy.jpg",
+      title: "User Experience Design",
+      image: "UIUX.jpg",
       alt: "IoT sensors and connected industrial devices",
       color: "text-green-500",
       borderColor: "hover:border-green-500/50",
-      description:
-        "Provide expert advice and strategic planning to align your technology investments with your business goals.",
+      subServices: [
+        "Intuitive Navigation and Information Architecture",
+        "Responsive and Accessible Design",
+        "Interactive Prototyping and Testing",
+       " Content Strategy Integration",
+       " Data-Driven Enhancements",
+       " Supportive Error Handling",
+        "Figma And Adobe XD"
+      ],
       link: "/services/it-consultancy"
     },
     {
@@ -44,9 +63,36 @@ export default function TechnologySection() {
       alt: "3D digital twin modeling and visualization",
       color: "text-purple-500",
       borderColor: "hover:border-purple-500/50",
-      description:
-        "Protect your business with threat detection, incident response, and compliance management.",
+      subServices: [
+      "  Threat Detection and Prevention",
+      "  Vulnerability Assessments and Penetration Testing",
+      "  Data Encryption and Privacy Protection",
+      "  Incident Response and Recovery",
+       " Employee Training and Awareness",
+      "  Managed Security Services",
+       " Identity and Access Management (IAM)",
+      "  Compliance and Risk Management",
+      ],
       link: "/services/cybersecurity"
+    },
+     {
+      icon: Monitor,
+      title: "Mobile App Development",
+      image: "software.jpg",
+      alt: "Industrial control room with monitoring systems",
+      color: "text-accent",
+      borderColor: "hover:border-blue-500/50",
+      subServices: [
+       " Custom App Development",
+       "  UI/UX Design",
+          "E-commerce App Solutions",
+          "Enterprise App Development",
+          "App Maintenance and Upgrades",
+          "Cloud-Based Mobile Apps",
+          "Cross Platform Apps",
+          "AWS And Firebase Authentication"
+      ],
+      link: "/services/software-development"
     },
     {
       icon: Box,
@@ -55,20 +101,54 @@ export default function TechnologySection() {
       alt: "Cloud services infrastructure",
       color: "text-purple-500",
       borderColor: "hover:border-gray-500/50",
-      description:
-        "We help you migrate to the cloud, manage your cloud infrastructure, and deploy cloud-native applications.",
+      subServices: [
+        "Cloud Infrastructure as a Service (IaaS)",
+        "Cloud Migration Services",
+        "Platform as a Service (PaaS)",
+        "Cloud Security Services",
+        "Hybrid Cloud Solutions",
+        "Data Backup and Disaster Recovery",
+        "Software as a Service (SaaS) Integration",
+       " Cloud Optimization",
+       " Cloud Application Development",
+        "24/7 Cloud Management and Support"
+      ],
       link: "/services/cloud-solutions"
     },
     {
       icon: Box,
-      title: "IT Infrastructure",
+      title: "Networking Services",
       image: "INFRASTRUCTURE.jpg",
       alt: "Network and infrastructure hardware",
       color: "text-purple-500",
       borderColor: "hover:border-green-500/50",
-      description:
-        "Our IT Infrastructure Solutions ensure a robust, scalable design for your business growth and long-term reliability.",
+      subServices: [
+        "Network Design, Upgrades and Optimization",
+        "Structured Cabling Solutions",
+        "Wireless Networking (Wi-Fi Solutions)",
+        "Server Installation and Configuration",
+        "VoIP and Unified Communications"
+      ],
       link: "/services/it-infrastructure"
+    },
+    {
+      icon: Box,
+      title: "CCTV Camera",
+      image: "CCTV.jpeg",
+      alt: "Network and infrastructure hardware",
+      color: "text-purple-500",
+      borderColor: "hover:border-green-500/50",
+      subServices: [
+       "CCTV Camera Installation",
+       " Standalone CCTV Systems",
+       " Remote Monitoring Setup",
+       " Indoor and Outdoor Surveillance",
+        "Maintenance and Support",
+        "Cloud Storage Solutions",
+       " Motion Detection and Alerts",
+        "Surveillance System Integration"
+      ],
+      link: "/services/cctv"
     }
   ];
 
@@ -84,7 +164,7 @@ export default function TechnologySection() {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Expertise</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Our <span className="#4A90E2">Expertise</span></h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
             We provide a comprehensive range of IT services that ensure your business operates smoothly and securely.
           </p>
@@ -95,12 +175,11 @@ export default function TechnologySection() {
           {technologies.map((tech, index) => (
             <Link key={index} href={tech.link}>
               <motion.div
-                className={`group p-6 rounded-xl bg-card border border-border ${tech.borderColor} transition-all cursor-pointer hover:shadow-lg`}
+                className={`group p-6 rounded-xl bg-card h-[390px] border border-border ${tech.borderColor} transition-all cursor-pointer hover:shadow-lg`}
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.2 }}
-                data-testid={`card-technology-${index}`}
               >
                 {/* Icon and Title */}
                 <motion.div
@@ -119,12 +198,12 @@ export default function TechnologySection() {
                   </span>
                 </motion.div>
 
-                {/* Image and Description */}
-                <div className="flex justify-between p-2 items-center gap-6">
+                {/* Image and Sub-Services List */}
+                <div className="flex justify-between p-2 items-start gap-6 flex-col sm:flex-row">
                   <motion.img
                     src={tech.image}
                     alt={tech.alt}
-                    className="w-72 h-48 object-cover rounded-lg opacity-0 transition-opacity duration-500"
+                    className="w-full sm:w-48 h-48 object-cover rounded-lg opacity-0 transition-opacity duration-500"
                     onLoad={(e) => e.currentTarget.classList.add("opacity-100")}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -132,15 +211,20 @@ export default function TechnologySection() {
                     transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.3 }}
                   />
 
-                  <motion.p
-                    className="text-lg ml-4 text-muted-foreground flex-1"
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.35 }}
-                  >
-                    {tech.description}
-                  </motion.p>
+                  <ul className="ml-4 text-muted-foreground flex-1 list-disc list-inside space-y-2">
+                    {tech.subServices.map((service, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+                        className="text-sm"
+                      >
+                        {service}
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             </Link>

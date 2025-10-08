@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Monitor, Code, Smartphone, Globe, CheckCircle, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function SoftwareDevelopment() {
+     useEffect(() => {
+      // Scroll to the top when this component mounts
+      window.scrollTo(0, 0);
+    }, []);
   const benefits = [
     {
       icon: Code,
@@ -42,26 +47,32 @@ export default function SoftwareDevelopment() {
 
   const technologies = [
     "React, Vue.js, Angular",
-    "Node.js, Python, Java",
-    "iOS (Swift), Android (Kotlin)",
-    "PostgreSQL, MongoDB",
-    "AWS, Azure, Google Cloud",
+    "Node.js, laravel, Python, Java",
+    "iOS (react, flutter), Android (react, flutter)",
+    "MySql, PostgreSQL, MongoDB",
+    "AWS, Azure, Google Cloud, etc",
     "Docker, Kubernetes"
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary">
       <Navigation />
 
-      <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary">
+       <section
+        className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
+        style={{
+          backgroundImage: "url('/1687.jpg')",
+        }}
+      >
+       
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-left "
           >
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-start mb-6">
               <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center">
                 <Monitor className="w-10 h-10 text-accent" />
               </div>
@@ -69,7 +80,7 @@ export default function SoftwareDevelopment() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Software Development
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl sm-mx-auto">
               Custom software solutions that transform your business processes and drive innovation.
             </p>
           </motion.div>

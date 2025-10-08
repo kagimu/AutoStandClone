@@ -2,94 +2,104 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Wifi, Target, BarChart, Users, CheckCircle, Lightbulb } from "lucide-react";
+import { MousePointer, Palette, Users, Lightbulb, CheckCircle, BarChart } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-export default function ITConsultancy() {
+export default function UXDesign() {
+   useEffect(() => {
+    // Scroll to the top when this component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const benefits = [
     {
-      icon: Target,
-      title: "Strategic Planning",
-      description: "Align your technology roadmap with your business objectives for maximum impact."
+      icon: Lightbulb,
+      title: "User-Centered Strategy",
+      description: "We craft every experience around the real needs, emotions, and behaviors of your users."
     },
     {
-      icon: Lightbulb,
-      title: "Expert Guidance",
-      description: "Access to seasoned IT professionals with decades of combined experience."
+      icon: Palette,
+      title: "Intuitive & Engaging Design",
+      description: "Our designs are visually appealing, easy to navigate, and optimized for accessibility."
     },
     {
       icon: BarChart,
-      title: "Cost Optimization",
-      description: "Identify opportunities to reduce IT costs while improving efficiency."
+      title: "Data-Driven Insights",
+      description: "We use user analytics, A/B testing, and heatmaps to continually refine user journeys."
     },
     {
       icon: Users,
-      title: "Change Management",
-      description: "Smooth technology transitions with minimal disruption to your operations."
+      title: "Collaborative Process",
+      description: "We involve your stakeholders and end users in every step to ensure the final product truly resonates."
     }
   ];
 
   const services = [
-    "IT strategy and roadmap development",
-    "Technology assessment and audits",
-    "Digital transformation consulting",
-    "Cloud migration planning",
-    "IT budget optimization",
-    "Vendor selection and management",
-    "IT governance and compliance",
-    "Business process optimization"
+    "User research and persona development",
+    "Information architecture and user flow mapping",
+    "Wireframing and prototyping",
+    "UX/UI design for web and mobile platforms",
+    "Usability testing and accessibility optimization",
+    "Interaction and motion design",
+    "Design systems and component libraries",
+    "Conversion rate optimization (CRO)"
   ];
 
   const approach = [
     {
       step: "01",
       title: "Discovery",
-      description: "We analyze your current IT landscape, business goals, and challenges."
+      description: "We conduct user research, interviews, and competitor analysis to understand goals and pain points."
     },
     {
       step: "02",
       title: "Strategy",
-      description: "We develop a comprehensive IT strategy aligned with your business objectives."
+      description: "We define user journeys, map experiences, and establish the design direction aligned with your brand."
     },
     {
       step: "03",
-      title: "Implementation",
-      description: "We guide you through the execution of recommended solutions."
+      title: "Design",
+      description: "We translate strategy into beautiful, functional interfaces using modern design tools and standards."
     },
     {
       step: "04",
-      title: "Optimization",
-      description: "We continuously monitor and refine your IT systems for peak performance."
+      title: "Testing & Refinement",
+      description: "We validate designs with real users, gather feedback, and iterate for optimal usability and engagement."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary">
       <Navigation />
 
-      <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary">
+      {/* Hero Section */}
+     <section
+        className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
+        style={{
+          backgroundImage: "url('/5741174.jpg')",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-left"
           >
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-green-500/10 rounded-2xl flex items-center justify-center">
-                <Wifi className="w-10 h-10 text-green-500" />
+            <div className="flex justify-start mb-6">
+              <div className="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center">
+                <MousePointer className="w-10 h-10 text-blue-500" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              IT Consultancy
+              User Experience <br/> (UX) Design
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Strategic IT guidance that transforms technology into a competitive advantage for your business.
-            </p>
+           
           </motion.div>
         </div>
       </section>
 
+      {/* About Section */}
       <section className="py-16 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -100,16 +110,16 @@ export default function ITConsultancy() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Navigate Technology with Confidence
+                Design That Puts People First
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                In today's rapidly evolving technology landscape, making the right IT decisions is crucial
-                for business success. Our consultancy services provide you with expert insights and strategic
-                guidance to maximize your technology investments.
+                Exceptional design is more than aesthetics — it’s about understanding human behavior and
+                creating meaningful interactions. Our UX design services focus on usability, accessibility,
+                and emotion-driven engagement that builds trust and loyalty.
               </p>
               <p className="text-lg text-muted-foreground">
-                We help you identify opportunities, mitigate risks, and develop a technology strategy that
-                drives innovation and growth while optimizing costs and improving operational efficiency.
+                We help you translate user insights into intuitive interfaces that not only delight users but
+                also meet your business goals, ensuring every click, scroll, and interaction feels effortless.
               </p>
             </motion.div>
             <motion.div
@@ -119,8 +129,8 @@ export default function ITConsultancy() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/consultancy.jpg"
-                alt="IT Consultancy"
+                src="/5809503.jpg"
+                alt="User Experience Design"
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
             </motion.div>
@@ -128,12 +138,13 @@ export default function ITConsultancy() {
         </div>
       </section>
 
+      {/* Benefits Section */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Benefits</h2>
             <p className="text-lg text-muted-foreground">
-              How our consultancy drives business value
+              How great UX transforms user satisfaction and business outcomes
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -144,10 +155,10 @@ export default function ITConsultancy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-card border border-border hover:border-green-500/50 transition-all"
+                className="p-6 rounded-xl bg-card border border-border hover:border-blue-500/50 transition-all"
               >
-                <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-blue-500" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
@@ -157,12 +168,13 @@ export default function ITConsultancy() {
         </div>
       </section>
 
+      {/* Process Section */}
       <section className="py-16 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Design Process</h2>
             <p className="text-lg text-muted-foreground">
-              A proven methodology for IT transformation
+              A collaborative, research-driven approach to crafting exceptional digital experiences
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -175,7 +187,7 @@ export default function ITConsultancy() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="text-6xl font-bold text-green-500/20 mb-4">{item.step}</div>
+                <div className="text-6xl font-bold text-blue-500/80 mb-4">{item.step}</div>
                 <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </motion.div>
@@ -184,6 +196,7 @@ export default function ITConsultancy() {
         </div>
       </section>
 
+      {/* Services List */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
@@ -193,7 +206,7 @@ export default function ITConsultancy() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Consultancy Services</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our UX Design Services</h2>
               <div className="space-y-4">
                 {services.map((service, index) => (
                   <motion.div
@@ -204,7 +217,7 @@ export default function ITConsultancy() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
                     <span className="text-lg">{service}</span>
                   </motion.div>
                 ))}
@@ -217,15 +230,14 @@ export default function ITConsultancy() {
               transition={{ duration: 0.6 }}
               className="bg-card rounded-2xl p-8 border border-border"
             >
-              <h3 className="text-2xl font-bold mb-4">Schedule a Consultation</h3>
+              <h3 className="text-2xl font-bold mb-4">Let’s Design Better Experiences</h3>
               <p className="text-muted-foreground mb-6">
-                Ready to optimize your IT strategy? Book a free consultation with our experts to
-                discuss your business goals and discover how we can help you achieve them through
-                strategic technology planning.
+                Ready to improve your user experience? Schedule a free consultation to explore how our
+                UX design process can elevate your product’s usability, engagement, and performance.
               </p>
               <Link href="/contact">
                 <Button size="lg" className="w-full">
-                  Book Your Consultation
+                  Get in Touch
                 </Button>
               </Link>
             </motion.div>

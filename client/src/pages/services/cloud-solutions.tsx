@@ -4,8 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Cloud, Zap, TrendingUp, DollarSign, CheckCircle, Server } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function CloudSolutions() {
+     useEffect(() => {
+      // Scroll to the top when this component mounts
+      window.scrollTo(0, 0);
+    }, []);
   const benefits = [
     {
       icon: TrendingUp,
@@ -59,10 +64,15 @@ export default function CloudSolutions() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-secondary">
       <Navigation />
 
-      <section className="pt-32 pb-16 bg-gradient-to-b from-background to-secondary">
+        <section
+        className="relative pt-32 pb-16 h-[400px] bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
+        style={{
+          backgroundImage: "url('/cloud.jpg')",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
