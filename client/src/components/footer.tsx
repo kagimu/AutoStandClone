@@ -6,10 +6,10 @@ export default function Footer() {
     {
       title: "Contact Us",
       links: [
-        { name: "+2567599272512", 
+        { name: "+256762833491", 
           href: "/contact" },
       ],
-      email: "adobeitech12@gmail.com"
+      email: "info@adobeitechug.com"
     },
   
   ];

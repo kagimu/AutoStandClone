@@ -215,8 +215,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Email</h4>
-                      <p className="text-muted-foreground">adobeitech12@gmail.com</p>
-                      <p className="text-muted-foreground">We reply within 24 hours</p>
+                      <p className="text-muted-foreground">info@adobeitechug.com</p>
+                      <p className="text-muted-foreground">support@adobeitechug.com</p>
+                      <p className="text-muted-foreground">procurement@adobeitechug.com</p>
                     </div>
                   </div>
 
@@ -226,7 +227,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground">+2567599272512</p>
+                      <p className="text-muted-foreground">+256757410852</p>
+                      <p className="text-muted-foreground">+256762833491</p>
                       <p className="text-muted-foreground">Mon-Fri 9:00 AM - 6:00 PM EST</p>
                     </div>
                   </div>

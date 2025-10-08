@@ -14,6 +14,7 @@ import Cybersecurity from "@/pages/services/cybersecurity";
 import CloudSolutions from "@/pages/services/cloud-solutions";
 import ITInfrastructure from "@/pages/services/it-infrastructure";
 import Cctv from "@/pages/services/cctv";
+import Preloader from "./pages/preloader";
 
 function Router() {
   return (
@@ -35,9 +36,12 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+   <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
+
+        <Preloader />
+
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
