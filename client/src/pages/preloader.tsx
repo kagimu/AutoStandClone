@@ -59,20 +59,22 @@ export default function Preloader() {
           {/* Logo animation */}
           <motion.img
             src="/Icon.png"
-            alt="Loading Logo"
-            className="w-28 h-28 mb-8 drop-shadow-2xl"
-            initial={{ scale: 0, rotate: 0 }}
+            alt="Logo"
+            className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(74,144,226,0.8)]"
+            style={{
+                filter: "drop-shadow(0px 4px 10px rgba(0,0,0,0.5)) brightness(1.1)",
+                transform: "perspective(600px) rotateX(10deg) rotateY(10deg)",
+            }}
             animate={{
-              scale: [0, 1.2, 1],
-              rotate: [0, 360],
+                rotateY: [0, 10, -10, 0],
+                scale: [1, 1.05, 1],
             }}
             transition={{
-              duration: 1.8,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "reverse",
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
             }}
-          />
+            />
 
           {/* Text animation */}
           <motion.p
