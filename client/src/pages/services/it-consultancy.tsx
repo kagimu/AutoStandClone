@@ -76,7 +76,7 @@ export default function UXDesign() {
      <section
         className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/5741174.jpg')",
+          backgroundImage: "url('/5741174.webp')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,8 +129,9 @@ export default function UXDesign() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/5809503.jpg"
+                src="/5809503.webp"
                 alt="User Experience Design"
+                 loading="lazy" 
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
             </motion.div>

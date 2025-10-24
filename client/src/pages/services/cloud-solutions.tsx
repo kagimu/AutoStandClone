@@ -70,7 +70,7 @@ export default function CloudSolutions() {
         <section
         className="relative pt-32 pb-16 h-[400px] bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/cloud.jpg')",
+          backgroundImage: "url('/cloud.webp')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,7 +124,7 @@ export default function CloudSolutions() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/CLOUD-COMPUTING.jpg"
+                src="/CLOUD-COMPUTING.webp"
                 alt="Cloud Solutions"
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />

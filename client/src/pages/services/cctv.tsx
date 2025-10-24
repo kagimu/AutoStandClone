@@ -111,7 +111,7 @@ export default function CCTV() {
        <section
         className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[40px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/cctv.jpg')",
+          backgroundImage: "url('/cctv.webp')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,8 +148,9 @@ export default function CCTV() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/cctv2.jpg"
+                src="/cctv2.webp"
                 alt="CCTV Installation"
+                 loading="lazy"
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
             </motion.div>

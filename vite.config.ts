@@ -29,6 +29,14 @@ export default async () => {
     build: {
       outDir: "dist",                                         // ✅ relative to client folder
       emptyOutDir: true,
+       rollupOptions: {
+    output: {
+      manualChunks: {
+        reactVendor: ['react', 'react-dom'],
+        chartVendor: ['chart.js', 'react-chartjs-2']
+      }
+    }
+  }
     },
     server: {
       fs: {

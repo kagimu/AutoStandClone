@@ -7,7 +7,7 @@ export default function TechnologySection() {
     {
       icon: Settings,
       title: "Digital Marketing Service",
-      image: "DIGITAL MARKETING.jpeg",
+      image: "DIGITAL MARKETING.webp",
       alt: "Industrial automation factory floor",
       color: "text-primary",
       borderColor: "hover:border-red-500/50",
@@ -24,7 +24,7 @@ export default function TechnologySection() {
     {
       icon: Monitor,
       title: "Web Development",
-      image: "software.jpg",
+      image: "software.webp",
       alt: "Industrial control room with monitoring systems",
       color: "text-accent",
       borderColor: "hover:border-blue-500/50",
@@ -41,7 +41,7 @@ export default function TechnologySection() {
     {
       icon: Wifi,
       title: "User Experience Design",
-      image: "UIUX.jpg",
+      image: "UIUX.webp",
       alt: "IoT sensors and connected industrial devices",
       color: "text-green-500",
       borderColor: "hover:border-green-500/50",
@@ -59,7 +59,7 @@ export default function TechnologySection() {
     {
       icon: Box,
       title: "CyberSecurity",
-      image: "cybersecurity.jpg",
+      image: "cybersecurity.webp",
       alt: "3D digital twin modeling and visualization",
       color: "text-purple-500",
       borderColor: "hover:border-purple-500/50",
@@ -78,7 +78,7 @@ export default function TechnologySection() {
      {
       icon: Monitor,
       title: "Mobile App Development",
-      image: "software.jpg",
+      image: "software.webp",
       alt: "Industrial control room with monitoring systems",
       color: "text-accent",
       borderColor: "hover:border-blue-500/50",
@@ -97,7 +97,7 @@ export default function TechnologySection() {
     {
       icon: Box,
       title: "Cloud Solutions",
-      image: "CLOUD-COMPUTING.jpg",
+      image: "CLOUD-COMPUTING.webp",
       alt: "Cloud services infrastructure",
       color: "text-purple-500",
       borderColor: "hover:border-gray-500/50",
@@ -118,7 +118,7 @@ export default function TechnologySection() {
     {
       icon: Box,
       title: "Networking Services",
-      image: "INFRASTRUCTURE.jpg",
+      image: "INFRASTRUCTURE.webp",
       alt: "Network and infrastructure hardware",
       color: "text-purple-500",
       borderColor: "hover:border-green-500/50",
@@ -134,7 +134,7 @@ export default function TechnologySection() {
     {
       icon: Box,
       title: "CCTV Camera",
-      image: "CCTV.jpeg",
+      image: "CCTV.webp",
       alt: "Network and infrastructure hardware",
       color: "text-purple-500",
       borderColor: "hover:border-green-500/50",

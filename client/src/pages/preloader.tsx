@@ -6,10 +6,38 @@ export default function Preloader() {
 
   useEffect(() => {
     const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 1000);
+      // Check if critical resources are loaded before hiding preloader
+      const checkResources = () => {
+        const criticalImages = [
+          '/Icon.webp',
+          '/AI-IMAGE.webp'
+        ];
+
+        const imagesLoaded = criticalImages.every(src => {
+          const img = new Image();
+          img.src = src;
+          return img.complete;
+        });
+
+        if (imagesLoaded) {
+          setIsLoading(false);
+        } else {
+          setTimeout(checkResources, 100);
+        }
+      };
+
+      // Start checking immediately, with a maximum wait time of 2 seconds
+      checkResources();
+      setTimeout(() => setIsLoading(false), 2000);
     };
-    window.addEventListener("load", handleLoad);
-    return () => window.removeEventListener("load", handleLoad);
+
+    // If window is already loaded, handle immediately
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
   }, []);
 
   return (
@@ -58,8 +86,9 @@ export default function Preloader() {
 
           {/* Logo animation */}
           <motion.img
-            src="/Icon.png"
+            src="/Icon.webp"
             alt="Logo"
+            loading="eager"
             className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(74,144,226,0.8)]"
             style={{
                 filter: "drop-shadow(0px 4px 10px rgba(0,0,0,0.5)) brightness(1.1)",

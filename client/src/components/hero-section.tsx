@@ -22,7 +22,7 @@ export default function HeroSection() {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/AI-IMAGE.png')",
+        backgroundImage: "url('/AI-IMAGE.jpeg')",
       }}
     >
       {/* Background overlay */}

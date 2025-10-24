@@ -79,7 +79,7 @@ export default function ITInfrastructure() {
        <section
         className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/networking11.jpg')",
+          backgroundImage: "url('/networking11.webp')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,8 +114,9 @@ export default function ITInfrastructure() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/networking-page.jpg"
+                src="/networking-page.webp"
                 alt="IT Infrastructure"
+                 loading="lazy" 
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
             </motion.div>

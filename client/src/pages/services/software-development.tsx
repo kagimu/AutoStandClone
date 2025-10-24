@@ -61,7 +61,7 @@ export default function SoftwareDevelopment() {
        <section
         className="relative pt-32 pb-16 bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/1687.jpg')",
+          backgroundImage: "url('/1687.webp')",
         }}
       >
        
@@ -97,8 +97,9 @@ export default function SoftwareDevelopment() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/software.jpg"
+                src="/software.webp"
                 alt="Software Development"
+                 loading="lazy" 
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
             </motion.div>

@@ -70,7 +70,7 @@ export default function Cybersecurity() {
        <section
         className="relative pt-32 pb-16 md:h-[400px] bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/cyber2.jpg')",
+          backgroundImage: "url('/cyber2.webp')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,8 +103,9 @@ export default function Cybersecurity() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/cybersecurity.jpg"
+                src="/cybersecurity.webp"
                 alt="Cybersecurity"
+                 loading="lazy" 
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
             </motion.div>

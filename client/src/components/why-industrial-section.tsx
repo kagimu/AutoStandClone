@@ -19,7 +19,7 @@ export default function WhyIndustrialSection() {
       bgColor: "bg-primary/10",
       hoverBg: "group-hover:bg-blue-500/20",
       borderColor: "hover:border-blue-500/50",
-      image: "/HUAWEI.png", // Example image path
+      image: "/HUAWEI.webp", // Example image path
       alt: "Industrial Automation"
     },
     {
@@ -31,7 +31,7 @@ export default function WhyIndustrialSection() {
       bgColor: "bg-accent/10",
       hoverBg: "group-hover:bg-[#ffb940]/20",
       borderColor: "hover:border-[#ffb940]/50",
-      image: "/lenovo-1.png", 
+      image: "/lenovo-1.webp", 
       alt: "Advanced Technology"
     },
     {
@@ -43,7 +43,7 @@ export default function WhyIndustrialSection() {
       bgColor: "bg-green-500/10",
       hoverBg: "group-hover:bg-green-500/20",
       borderColor: "hover:border-green-500/50",
-      image: "/lenovo-2.png",
+      image: "/lenovo-2.webp",
       alt: "Engineering Freedom"
     },
   ];

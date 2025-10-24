@@ -52,7 +52,7 @@ export default function DigitalMarketingServices() {
       <section
         className="relative pt-32 pb-16 h-[400px] bg-secondary bg-center bg-cover bg-no-repeat rounded-b-[50px] overflow-hidden shadow-lg shadow-gray-800/30"
         style={{
-          backgroundImage: "url('/1726.jpg')",
+          backgroundImage: "url('/1726.webp')",
         }}
       >
         {/* Overlay (optional, if you want extra darkening) */}
@@ -107,8 +107,9 @@ export default function DigitalMarketingServices() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/networking.jpg"
+                src="/networking.webp"
                 alt="Digital Marketing Services"
+                 loading="lazy" 
                 className="rounded-2xl shadow-2xl w-full h-[400px]"
               />
             </motion.div>

@@ -28,7 +28,7 @@ const clients = [
     { logo: "/cli-1.png", alt: "Client 1 Logo" },
     { logo: "/cli-2.png", alt: "Client 2 Logo" },
     { logo: "/cli-3.png", alt: "Client 3 Logo" },
-    { logo: "/cli-4.jpg", alt: "Client 4 Logo" },
+    { logo: "/cli-4.webp", alt: "Client 4 Logo" },
     { logo: "/cli5.png", alt: "Client 5 Logo" },
     { logo: "/cli-6.png", alt: "Client 6 Logo" },
     { logo: "/cli-7.png", alt: "Client 7 Logo" },
