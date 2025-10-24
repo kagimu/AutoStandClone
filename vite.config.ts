@@ -40,7 +40,7 @@ export default async () => {
         }
       },
       // Enable compression and minification for better mobile performance
-      minify: 'terser',
+      minify: 'esbuild',
       terserOptions: {
         compress: {
           drop_console: true,
