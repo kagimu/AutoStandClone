@@ -33,7 +33,7 @@ export default async () => {
         output: {
           manualChunks: {
             reactVendor: ['react', 'react-dom'],
-            chartVendor: ['chart.js', 'react-chartjs-2'],
+            chartVendor: ['recharts'],
             uiVendor: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
             motionVendor: ['framer-motion']
           }
