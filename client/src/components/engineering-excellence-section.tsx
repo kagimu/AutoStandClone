@@ -69,13 +69,13 @@ const clients = [
         {clients.map((client, index) => (
           <SwiperSlide key={index}>
             <div
-              className="text-center p-8 rounded-xl bg-card border border-border flex items-center justify-center"
+              className="text-center xl:p-8 rounded-xl bg-card border border-border flex items-center justify-center"
               data-testid={`client-${index}`}
             >
               <img
                 src={client.logo}
                 alt={client.alt}
-                className="h-40 w-[50%] object-fill rounded-xl"
+                className="xl:h-[80%] xl:w-[80%] md:h-full md:w-full md:object-cover xl:object-fill rounded-xl"
               />
             </div>
           </SwiperSlide>

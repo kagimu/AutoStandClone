@@ -175,7 +175,7 @@ export default function TechnologySection() {
           {technologies.map((tech, index) => (
             <Link key={index} href={tech.link}>
               <motion.div
-                className={`group p-6 rounded-xl bg-card h-[390px] border border-border ${tech.borderColor} transition-all cursor-pointer hover:shadow-lg`}
+                className={`group p-6 rounded-xl bg-card xl:h-[390px] border border-border ${tech.borderColor} transition-all cursor-pointer hover:shadow-lg`}
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: false, amount: 0.2 }}
@@ -191,7 +191,7 @@ export default function TechnologySection() {
                 >
                   <div className="flex items-center">
                     <tech.icon className={`${tech.color} h-6 w-6 mr-3`} />
-                    <h3 className="text-xl font-semibold">{tech.title}</h3>
+                    <h3 className="text-xl md:text-lg font-semibold">{tech.title}</h3>
                   </div>
                   <span className="text-sm text-primary group-hover:translate-x-1 transition-transform">
                     Learn More →

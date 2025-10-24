@@ -29,7 +29,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-6xl px-2 sm:px-3 lg:px-0 mt-10 text-left">
+      <div className="relative z-10 w-full max-w-6xl px-2 sm:px-3 lg:px-0 xl:mt-10 xl:text-left text-center md:p-4">
         <motion.div
           className="space-y-8"
           initial="hidden"
