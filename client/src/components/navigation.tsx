@@ -34,7 +34,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
-             <img src="/Icon.png" alt="Logo" className="h-10 w-10" />
+             <img src="/Icon.webp" alt="Logo" className="h-10 w-10" />
               <span className="text-lg font-bold">Adobe Technologies</span>
             </div>
           </Link>

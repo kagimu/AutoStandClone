@@ -25,15 +25,15 @@ export default function EngineeringExcellenceSection() {
     }
   ];
 const clients = [
-    { logo: "/cli-1.png", alt: "Client 1 Logo" },
-    { logo: "/cli-2.png", alt: "Client 2 Logo" },
-    { logo: "/cli-3.png", alt: "Client 3 Logo" },
+    { logo: "/cli-1.webp", alt: "Client 1 Logo" },
+    { logo: "/cli-2.webp", alt: "Client 2 Logo" },
+    { logo: "/cli-3.webp", alt: "Client 3 Logo" },
     { logo: "/cli-4.webp", alt: "Client 4 Logo" },
-    { logo: "/cli5.png", alt: "Client 5 Logo" },
-    { logo: "/cli-6.png", alt: "Client 6 Logo" },
-    { logo: "/cli-7.png", alt: "Client 7 Logo" },
-    { logo: "/cli-8.png", alt: "Client 8 Logo" },
-    { logo: "/cli-9.png", alt: "Client 9 Logo" },
+    { logo: "/cli5.webp", alt: "Client 5 Logo" },
+    { logo: "/cli-6.webp", alt: "Client 6 Logo" },
+    { logo: "/cli-7.webp", alt: "Client 7 Logo" },
+    { logo: "/cli-8.webp", alt: "Client 8 Logo" },
+    { logo: "/cli-9.webp", alt: "Client 9 Logo" },
   ];
   return (
     <section id="excellence" className="py-24 bg-background">

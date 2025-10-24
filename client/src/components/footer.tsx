@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="space-y-4 flex flex-col items-center justify-center order-1 md:order-2">
             <div className="flex flex-col items-center justify-center">
               <img
-                src="/Icon.png"
+                src="/Icon.webp"
                 alt="Logo"
                 className="h-10 w-10 mb-2"
                 loading="lazy"
