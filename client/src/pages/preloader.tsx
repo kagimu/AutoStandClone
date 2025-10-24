@@ -50,32 +50,32 @@ export default function Preloader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          {/* Floating orbs (subtle, blue glow) */}
+          {/* Floating orbs (subtle, blue glow) - reduced for mobile performance */}
           <motion.div
-            className="absolute inset-0 overflow-hidden pointer-events-none"
+            className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block"
             initial={{ opacity: 0.7 }}
-            animate={{ opacity: [0.6, 0.9, 0.6] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ opacity: [0.6, 0.8, 0.6] }}
+            transition={{ duration: 3, repeat: Infinity }}
           >
-            {Array.from({ length: 6 }).map((_, i) => (
+            {Array.from({ length: 3 }).map((_, i) => ( // Reduced from 6 to 3 orbs
               <motion.div
                 key={i}
-                className="absolute w-20 h-20 rounded-full blur-3xl"
+                className="absolute w-16 h-16 rounded-full blur-2xl" // Smaller size
                 style={{
-                  background: `radial-gradient(circle, rgba(255,255,255,0.5), transparent 60%)`,
+                  background: `radial-gradient(circle, rgba(255,255,255,0.3), transparent 60%)`, // Reduced opacity
                 }}
                 initial={{
                   x: Math.random() * window.innerWidth,
                   y: Math.random() * window.innerHeight,
-                  scale: Math.random() * 1.2,
+                  scale: Math.random() * 1.1,
                 }}
                 animate={{
                   x: Math.random() * window.innerWidth,
                   y: Math.random() * window.innerHeight,
-                  scale: [1, 1.5, 1],
+                  scale: [1, 1.3, 1], // Reduced scale
                 }}
                 transition={{
-                  duration: 7 + Math.random() * 5,
+                  duration: 12 + Math.random() * 8, // Much slower animation
                   repeat: Infinity,
                   repeatType: "reverse",
                   ease: "easeInOut",
@@ -95,11 +95,11 @@ export default function Preloader() {
                 transform: "perspective(600px) rotateX(10deg) rotateY(10deg)",
             }}
             animate={{
-                rotateY: [0, 10, -10, 0],
-                scale: [1, 1.05, 1],
+                rotateY: [0, 5, -5, 0], // Reduced rotation for mobile performance
+                scale: [1, 1.02, 1], // Reduced scale for mobile performance
             }}
             transition={{
-                duration: 3,
+                duration: 4, // Increased duration to reduce CPU usage
                 repeat: Infinity,
                 ease: "easeInOut",
             }}
@@ -119,12 +119,12 @@ export default function Preloader() {
             Preparing your experience...
           </motion.p>
 
-          {/* Subtle glow effect behind logo */}
+          {/* Subtle glow effect behind logo - disabled on mobile for performance */}
           <motion.div
-            className="absolute w-64 h-64 bg-[#4A90E2]/40 blur-3xl rounded-full -z-10"
+            className="absolute w-64 h-64 bg-[#4A90E2]/40 blur-3xl rounded-full -z-10 hidden md:block"
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.2, 0.9], opacity: [0.3, 0.6, 0.4] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ scale: [0.8, 1.1, 0.9], opacity: [0.3, 0.5, 0.4] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
       )}

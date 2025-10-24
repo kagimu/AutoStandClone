@@ -29,14 +29,26 @@ export default async () => {
     build: {
       outDir: "dist",                                         // ✅ relative to client folder
       emptyOutDir: true,
-       rollupOptions: {
-    output: {
-      manualChunks: {
-        reactVendor: ['react', 'react-dom'],
-        chartVendor: ['chart.js', 'react-chartjs-2']
-      }
-    }
-  }
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            reactVendor: ['react', 'react-dom'],
+            chartVendor: ['chart.js', 'react-chartjs-2'],
+            uiVendor: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+            motionVendor: ['framer-motion']
+          }
+        }
+      },
+      // Enable compression and minification for better mobile performance
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
+      // Optimize chunk size for mobile
+      chunkSizeWarningLimit: 500
     },
     server: {
       fs: {

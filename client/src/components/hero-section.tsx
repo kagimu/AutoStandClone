@@ -22,7 +22,7 @@ export default function HeroSection() {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: "url('/AI-IMAGE.jpeg')",
+        backgroundImage: "url('/AI-IMAGE.webp')",
       }}
     >
       {/* Background overlay */}
@@ -106,10 +106,10 @@ export default function HeroSection() {
       animate={{
         y: [0, floatDistance, 0],
         x: [0, floatDistance / 4, 0], // slight horizontal movement
-        rotate: [0, 10, -10, 0],
+        rotate: [0, 5, -5, 0], // Reduced rotation for mobile performance
       }}
       transition={{
-        duration: 4 + Math.random() * 3,
+        duration: 6 + Math.random() * 4, // Increased duration for less CPU usage
         repeat: Infinity,
         ease: "easeInOut",
         repeatType: "mirror",
