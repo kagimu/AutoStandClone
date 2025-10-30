@@ -13,6 +13,7 @@ import { apiRequest } from "@/lib/queryClient";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -66,7 +67,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>  
+    <SEOHead
+            title="Adobe Technologies Limited Uganda | Professional IT Repair, maintenance, consultancy Solutions and Online Presence"
+            description="We provide top-notch IT services across Uganda and build safe, functional, beautiful, responsive software applications. Let's bring your ideas to life!"
+            url="https://adobeitechug.com"
+          />
+     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       <main className="pt-24 pb-16">
@@ -270,5 +277,7 @@ export default function Contact() {
 
       <Footer />
     </div>
+    </>
+   
   );
 }
